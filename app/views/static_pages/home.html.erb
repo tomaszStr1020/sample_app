@@ -1,7 +1,8 @@
+<% provide :title, "Home" %>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home | Ruby on Rails Tutorial Sample App</title></head>
+  <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title></head>
 <body>
 <h1>Sample App</h1>
 <p>
@@ -10,3 +11,7 @@
 </p>
 </body>
 </html>
+
+<!--(The distinction between the two types of embedded
+ Ruby is that <%# ... %> executes the code inside,
+ while <%#= ... %> executes it and inserts the result into the template.)-->
