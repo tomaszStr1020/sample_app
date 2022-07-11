@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield (:title)) %> </title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><%= full_title(yield (:title)) %> </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-<!--    Nie mam pojęcia czemu to trzeba zakomentować xdd  ^^^^^^^-->
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <!--    Nie mam pojęcia czemu to trzeba zakomentować xdd  ^^^^^^^-->
+
+  <%= render 'layouts/shim' %>
+
+</head>
+
+<body>
+<%= render 'layouts/header' %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "sample app", '#', id: "logo" %>
+
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <%= link_to "Home", '#' %></li>
+        <li> <%= link_to "Help", '#' %></li>
+        <li> <%= link_to "Log in", '#' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <%= yield %>
+</div>
+</body>
 </html>
 
 <!--Mam nadzieję się dowiedzieć czemu musiałem tak zrobić xd-->

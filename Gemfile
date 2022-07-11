@@ -8,6 +8,7 @@ gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "jsbundling-rails"
 gem "turbo-rails"
+gem 'bootstrap-sass', '3.4.1'
 gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
