@@ -3,6 +3,7 @@ require "test_helper"
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
+    # To chyba cos typu init dla klasy?
     @base_title = 'Ruby on Rails Tutorial Sample App'
   end
   test "should get home" do
@@ -26,7 +27,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get contact" do
     get static_pages_contact_url
     assert_response :success
-    assert_select "title", "Contact | #{@base_title}"
+    assert_select "title", "#{@base_title}"
   end
 
   test "should get root" do
