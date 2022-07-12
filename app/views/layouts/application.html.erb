@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield (:title)) %> </title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
+  <%= render 'layouts/head' %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   <!--    Nie mam pojęcia czemu to trzeba zakomentować xdd  ^^^^^^^-->
@@ -22,8 +18,8 @@
 
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li> <%= link_to "Home", '#' %></li>
-        <li> <%= link_to "Help", '#' %></li>
+        <li> <%= link_to "Home", root_path %></li>
+        <li> <%= link_to "Help", help_path %></li>
         <li> <%= link_to "Log in", '#' %></li>
       </ul>
     </nav>
@@ -31,6 +27,7 @@
 </header>
 <div class="container">
   <%= yield %>
+  <%= render 'layouts/footer' %>
 </div>
 </body>
 </html>
