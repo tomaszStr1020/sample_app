@@ -6,6 +6,7 @@ ruby "2.7.6"
 gem "rails", "~> 7.0.3"
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
+gem 'bcrypt',         '3.1.13'
 gem "jsbundling-rails"
 gem "turbo-rails"
 gem 'bootstrap-sass', '3.4.1'
