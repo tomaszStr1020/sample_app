@@ -14,18 +14,22 @@
 <%= render 'layouts/header' %>
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", '#', id: "logo" %>
+    <%= link_to "sample app",  root_path, id: "logo" %>
 
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li> <%= link_to "Home", root_path %></li>
         <li> <%= link_to "Help", help_path %></li>
-        <li> <%= link_to "Log in", '#' %></li>
+        <li> <%= link_to "Log in", signup_path %></li>
       </ul>
     </nav>
   </div>
 </header>
 <div class="container">
+
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
   <%= yield %>
   <%= render 'layouts/footer' %>
   <%= debug(params) if Rails.env.development? %>
@@ -33,6 +37,4 @@
 </body>
 </html>
 
-<!--Mam nadzieję się dowiedzieć czemu musiałem tak zrobić xd-->
-
-<!--yield odwołuje się do argumentów przekazanych do metody/bloku-->
+<!--yield odwołuje się do argumentów przekazanych do metody/bloku np. tutaj od kontrolera?-->
