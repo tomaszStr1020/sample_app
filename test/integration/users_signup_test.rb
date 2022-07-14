@@ -15,5 +15,16 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     assert_select 'div.alert'
     assert_select 'div.alert-danger'
+  end
+
+  test "valid signup information" do
+    get signup_path
+    assert_difference 'User.count', 1 do
+      post users_path, params: { user: { name: "Example user", email: "exam@ple.pl",
+                                         password: "passwor", password_confirmation: "passwor"}}
     end
+    follow_redirect!
+    assert_template 'users/show'
+    assert_not flash[:success].equal?("Welcome to the Sample App!")
+  end
 end
