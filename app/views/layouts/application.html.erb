@@ -5,6 +5,10 @@
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%#= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   <!--    Nie mam pojęcia czemu to trzeba zakomentować xdd  ^^^^^^^-->
+<!--  Kilkanaście godzin później: brakuje czegoś js-owego, trudno xd-->
+  <%= javascript_pack_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
   <%= render 'layouts/shim' %>
 
@@ -12,19 +16,7 @@
 
 <body>
 <%= render 'layouts/header' %>
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "sample app",  root_path, id: "logo" %>
 
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li> <%= link_to "Home", root_path %></li>
-        <li> <%= link_to "Help", help_path %></li>
-        <li> <%= link_to "Log in", signup_path %></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 <div class="container">
 
   <% flash.each do |message_type, message| %>
